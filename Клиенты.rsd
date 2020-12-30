@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>Хранилище</DataSourceReference>
+      <CommandText>SELECT        DimGeography.EnglishCountryRegionName AS Страна, DimGeography.City AS Город, DimCustomer.CustomerKey, DimCustomer.FirstName AS Имя, DimCustomer.MiddleName AS Отчество, 
+                         DimCustomer.LastName AS Фамилия, DimCustomer.BirthDate AS [Дата рождения], DimCustomer.MaritalStatus AS [Материальный статус], DimCustomer.Gender AS Пол, DimCustomer.Title AS Название, 
+                         DimCustomer.EmailAddress, DimCustomer.YearlyIncome, DimCustomer.TotalChildren AS [Кол-во детей], DimCustomer.EnglishEducation AS Образование
+FROM            DimCustomer INNER JOIN
+                         DimGeography ON DimCustomer.GeographyKey = DimGeography.GeographyKey</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="Страна">
+        <DataField>Страна</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Город">
+        <DataField>Город</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CustomerKey">
+        <DataField>CustomerKey</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Имя">
+        <DataField>Имя</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Отчество">
+        <DataField>Отчество</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Фамилия">
+        <DataField>Фамилия</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Дата_рождения">
+        <DataField>Дата рождения</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Материальный_статус">
+        <DataField>Материальный статус</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Пол">
+        <DataField>Пол</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Название">
+        <DataField>Название</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="EmailAddress">
+        <DataField>EmailAddress</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="YearlyIncome">
+        <DataField>YearlyIncome</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="Кол_во_детей">
+        <DataField>Кол-во детей</DataField>
+        <rd:TypeName>System.Byte</rd:TypeName>
+      </Field>
+      <Field Name="Образование">
+        <DataField>Образование</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+    <Filters>
+      <Filter>
+        <FilterExpression>=Fields!Образование.Value</FilterExpression>
+        <Operator>Equal</Operator>
+        <FilterValues>
+          <FilterValue>Bachelors</FilterValue>
+        </FilterValues>
+      </Filter>
+    </Filters>
+  </DataSet>
+</SharedDataSet>

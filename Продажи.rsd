@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>Хранилище</DataSourceReference>
+      <CommandText>SELECT       TOP(1000) FactInternetSales.SalesOrderNumber, FactInternetSales.SalesOrderLineNumber, FactInternetSales.OrderQuantity, FactInternetSales.UnitPrice, FactInternetSales.ExtendedAmount, FactInternetSales.UnitPriceDiscountPct, 
+                         FactInternetSales.DiscountAmount, FactInternetSales.ProductStandardCost, FactInternetSales.TotalProductCost, FactInternetSales.SalesAmount, FactInternetSales.TaxAmt, FactInternetSales.OrderDate, 
+                         FactInternetSales.DueDate, FactInternetSales.ShipDate, DimProduct.EnglishProductName, DimProduct.Color, DimProduct.ProductLine, DimCustomer.FirstName, DimCustomer.MiddleName, DimCustomer.LastName, 
+                         DimCustomer.Gender, DimCustomer.TotalChildren, DimCustomer.EnglishEducation, DimGeography.City, DimGeography.EnglishCountryRegionName, DimDate.DayNumberOfMonth, DimDate.EnglishMonthName, 
+                         DimDate.CalendarYear, DimDate.MonthNumberOfYear
+FROM            FactInternetSales INNER JOIN
+                         DimProduct ON FactInternetSales.ProductKey = DimProduct.ProductKey INNER JOIN
+                         DimCustomer ON FactInternetSales.CustomerKey = DimCustomer.CustomerKey INNER JOIN
+                         DimGeography ON DimCustomer.GeographyKey = DimGeography.GeographyKey INNER JOIN
+                         DimDate ON FactInternetSales.OrderDateKey = DimDate.DateKey
+ORDER BY NewID()</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="SalesOrderNumber">
+        <DataField>SalesOrderNumber</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="SalesOrderLineNumber">
+        <DataField>SalesOrderLineNumber</DataField>
+        <rd:TypeName>System.Byte</rd:TypeName>
+      </Field>
+      <Field Name="OrderQuantity">
+        <DataField>OrderQuantity</DataField>
+        <rd:TypeName>System.Int16</rd:TypeName>
+      </Field>
+      <Field Name="UnitPrice">
+        <DataField>UnitPrice</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="ExtendedAmount">
+        <DataField>ExtendedAmount</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="UnitPriceDiscountPct">
+        <DataField>UnitPriceDiscountPct</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="EnglishProductName">
+        <DataField>EnglishProductName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="DiscountAmount">
+        <DataField>DiscountAmount</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Color">
+        <DataField>Color</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="ProductStandardCost">
+        <DataField>ProductStandardCost</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="ProductLine">
+        <DataField>ProductLine</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TotalProductCost">
+        <DataField>TotalProductCost</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="FirstName">
+        <DataField>FirstName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="SalesAmount">
+        <DataField>SalesAmount</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="MiddleName">
+        <DataField>MiddleName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TaxAmt">
+        <DataField>TaxAmt</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="LastName">
+        <DataField>LastName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Gender">
+        <DataField>Gender</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TotalChildren">
+        <DataField>TotalChildren</DataField>
+        <rd:TypeName>System.Byte</rd:TypeName>
+      </Field>
+      <Field Name="EnglishEducation">
+        <DataField>EnglishEducation</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="OrderDate">
+        <DataField>OrderDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="DueDate">
+        <DataField>DueDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="ShipDate">
+        <DataField>ShipDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="City">
+        <DataField>City</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="EnglishCountryRegionName">
+        <DataField>EnglishCountryRegionName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="DayNumberOfMonth">
+        <DataField>DayNumberOfMonth</DataField>
+        <rd:TypeName>System.Byte</rd:TypeName>
+      </Field>
+      <Field Name="EnglishMonthName">
+        <DataField>EnglishMonthName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CalendarYear">
+        <DataField>CalendarYear</DataField>
+        <rd:TypeName>System.Int16</rd:TypeName>
+      </Field>
+      <Field Name="MonthNumberOfYear">
+        <DataField>MonthNumberOfYear</DataField>
+        <rd:TypeName>System.Byte</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

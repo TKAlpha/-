@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>Reports</DataSourceReference>
+      <CommandText>CALL Assortment_and_stock(11,30)</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="id_Организыции">
+        <DataField>id_Организыции</DataField>
+        <rd:TypeName>System.Int64</rd:TypeName>
+      </Field>
+      <Field Name="Организация">
+        <DataField>Организация</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Склад">
+        <DataField>Склад</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Статус">
+        <DataField>Статус</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Количество_брендов">
+        <DataField>Количество брендов</DataField>
+        <rd:TypeName>System.Int64</rd:TypeName>
+      </Field>
+      <Field Name="Количество_номенклатур_среднее_">
+        <DataField>Количество номенклатур(среднее)</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="Количество_деталей_среднее_">
+        <DataField>Количество деталей(среднее)</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="Сумма_в_рублях_среднее_">
+        <DataField>Сумма в рублях(среднее)</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="Продажи_склада___любым_участникам">
+        <DataField>Продажи склада - любым участникам</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Продажи_склада___со_своего_склада">
+        <DataField>Продажи склада - со своего склада</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Продажи_Дистрибьютор____Магазин">
+        <DataField>Продажи Дистрибьютор -&gt; Магазин</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Продажи_Дистрибьютор____Магазин___со_своего_склада">
+        <DataField>Продажи Дистрибьютор -&gt; Магазин - со своего склада</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Период_оборота_запаса">
+        <DataField>Период оборота запаса</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

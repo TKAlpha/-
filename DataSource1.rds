@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DataSource1">
+  <ConnectionProperties>
+    <Extension>XML</Extension>
+    <ConnectString>data source=https://adventure-works.com/results.aspx</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>dbb14d08-1395-44d7-9dcc-2a372c381c71</DataSourceID>
+</RptDataSource>

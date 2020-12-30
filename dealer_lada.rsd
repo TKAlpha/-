@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>ms_sql_reports</DataSourceReference>
+      <CommandText>SELECT
+	dl.registration_number as "ИНН",
+	dl.contractor_id as "id Поставщика",
+	dl.id_1c as "код 1С",
+	dl.supplier_contractor_title as "Дилер",
+	YEAR(dl.created) as "Год",
+	MONTH(dl.created) as "Месяц",
+	--NULL as "Город",
+	--NULL as "Регион",
+	--NULL as "ФО",
+	CONCAT(DATENAME(MONTH,dl.created),' ',DATENAME(YEAR,dl.created)) as "Период",
+
+	SUM(dl.amount_order_item) as "Заказ",
+	SUM(dl.amount_confirmation_for_execution) as "Подтверждение в исполнение",
+	SUM(dl.amount_sipment_item) as "Отгрузка"
+FROM dealer_lada dl
+GROUP BY 
+	dl.registration_number,
+	dl.contractor_id,
+	dl.id_1c,
+	dl.supplier_contractor_title,
+	CONCAT(DATENAME(MONTH,dl.created),' ',DATENAME(YEAR,dl.created)),
+	YEAR(dl.created),
+	MONTH(dl.created)
+ORDER BY YEAR(dl.created),	MONTH(dl.created);</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="ИНН">
+        <DataField>ИНН</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="id_Поставщика">
+        <DataField>id Поставщика</DataField>
+        <rd:TypeName>System.Int64</rd:TypeName>
+      </Field>
+      <Field Name="код_1С">
+        <DataField>код 1С</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Дилер">
+        <DataField>Дилер</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Год">
+        <DataField>Год</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Заказ">
+        <DataField>Заказ</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Месяц">
+        <DataField>Месяц</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Период">
+        <DataField>Период</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Подтверждение_в_исполнение">
+        <DataField>Подтверждение в исполнение</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Отгрузка">
+        <DataField>Отгрузка</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

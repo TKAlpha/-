@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="ms_sql_reports">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=.;Initial Catalog=reports</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>c17939e4-9e6a-49f9-b415-2813b380a298</DataSourceID>
+</RptDataSource>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Reports">
+  <ConnectionProperties>
+    <Extension>ODBC</Extension>
+    <ConnectString>Driver=MySQL ODBC 8.0 Unicode Driver;server=10.2.2.65;database=reports;port=3306</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>1bcbdc2c-31d6-4222-9a2c-2b43c84ba200</DataSourceID>
+</RptDataSource>

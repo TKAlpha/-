@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>Reports</DataSourceReference>
+      <CommandText>SELECT co.id AS 'Id заказа',
+co.created AS 'Дата заказа',
+co.customer_contractor_title AS 'Клиент',
+tc.distributor_title AS 'Дистрибьютор',
+co.customer_storage_title AS 'Склад клиента',
+co.supplier_contractor_title AS 'Поставщик',
+co.supplier_storage_title AS 'Склад поставщика',
+co.standart_art AS 'Артикул',
+co.standart_br AS 'Brand',
+co.standart_title AS 'Название детали',
+co.amount_order_item AS 'Сумма по строке',
+co.quantity_order_item AS 'Количество по строке',
+co.doc_id AS 'Id документа',
+co.created_doc AS 'Дата документа',
+co.quantity_doc AS 'Количество в документе',
+co.amount_doc AS 'Сумма в документе',
+co.type_doc AS 'Тип документа',
+reqsel.title AS 'Дешевле - Быстрее'
+FROM reports.clients_order co
+LEFT JOIN reports.type_contractor tc
+ON co.customer_contractor_id = tc.id
+JOIN
+(SELECT ord.id as 'order_id',
+sc.title as 'title'
+FROM reports_abom.document_order ord
+JOIN reports_abom.request r ON ord.request_id = r.id
+LEFT JOIN reports_abom.selection_criteria sc ON r.selection_criteria_id = sc.id) reqsel
+ON reqsel.order_id = co.id
+where co.supplier_contractor_id = 908 OR co.supplier_contractor_id = 1301</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="Id_заказа">
+        <DataField>Id заказа</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Дата_заказа">
+        <DataField>Дата заказа</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Клиент">
+        <DataField>Клиент</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Дистрибьютор">
+        <DataField>Дистрибьютор</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Склад_клиента">
+        <DataField>Склад клиента</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Поставщик">
+        <DataField>Поставщик</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Склад_поставщика">
+        <DataField>Склад поставщика</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Артикул">
+        <DataField>Артикул</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Brand">
+        <DataField>Brand</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Название_детали">
+        <DataField>Название детали</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Сумма_по_строке">
+        <DataField>Сумма по строке</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Количество_по_строке">
+        <DataField>Количество по строке</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Id_документа">
+        <DataField>Id документа</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Дата_документа">
+        <DataField>Дата документа</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Количество_в_документе">
+        <DataField>Количество в документе</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="Сумма_в_документе">
+        <DataField>Сумма в документе</DataField>
+        <rd:TypeName>System.Double</rd:TypeName>
+      </Field>
+      <Field Name="Тип_документа">
+        <DataField>Тип документа</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Дешевле___Быстрее">
+        <DataField>Дешевле - Быстрее</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

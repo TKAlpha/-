@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Reports_abom">
+  <ConnectionProperties>
+    <Extension>ODBC</Extension>
+    <ConnectString>Driver=MySQL ODBC 8.0 Unicode Driver;server=10.2.2.65;database=reports_abom;port=3306</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>342b9e54-a20e-4460-9441-71c17dcd2c17</DataSourceID>
+</RptDataSource>
